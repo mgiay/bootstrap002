@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--====================HEADER:BEGIN====================-->
+<head>
+    <title>TOVE04 APPLICATION</title>
+    <meta charset="utf-8">
+    <meta content="ID=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="bootstrap-4.6.0-dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="bootstrap-icons-1.5.0/bootstrap-icons.css" rel="stylesheet" type="text/css">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+<!--====================HEADER:END====================-->
+
+
+<!--====================BODY: BEGIN====================-->
+<body>
+<!--NAVIGATOR BAR:BEGIN-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-envelope"></i>
+            <b>TOVE04 APPLICATION</b>
+        </a>
+
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toogle Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav mr-auto">
+            </div>
+            <form class="form-inline my-2 my-lg-0 ng-pristine ng-valid">
+                <span class="text-white ng-binding">Huy(101)</span>
+                <span class="text-white mx-2">|</span>
+                <a href="#" class="text-white">Unregister</a>
+            </form>
+        </div>
+    </div>
+</nav>
+<!--NAVIGATOR BAR:END-->
+
+
+<!--====================CONTAINER FOR TABLE:BEGIN====================-->
+<div class="container">
+    <!--SEARCH FORM:BEGIN-->
+    <div class="row my-3">
+        <div class="col-6">
+            <div id="div_search" class="input-group" style="width:400px">
+                <input id="txtFilter" type="text" class="form-control" placeholder="Filter...">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-info" type="button" id="btnCall">
+                        <i class="bi bi-telephone-fill"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--SEARCH FORM:END-->
+        <!--ADD CONTACT:BEGIN-->
+        <div class="col-6 text-right">
+            <button class="btn btn-success">
+                <i class="bi bi-plus-circle"></i>
+                Add Contact
+            </button>
+        </div>
+        <!--ADD CONTACT:END-->
+    </div>
+
+    <!--====================TABLE:BEGIN====================-->
+    <div id="div_Table" class="table-responsive">
+        <table class="table table-bordered border-primary">
+            <!--TABLE HEADER:BEGIN-->
+            <!--<thead class="table-dark">-->
+            <thead>
+            <tr>
+                <th scope="col" class="text-center" width="50px">#</th>
+                <th scope="col" class="text-center">First Name</th>
+                <th scope="col" class="text-center">Last Name</th>
+                <th scope="col" class="text-center">Phone</th>
+                <th scope="col" class="text-center" width="150px">Action</th>
+            </tr>
+            </thead>
+            <!--TABLE HEADER:END-->
+
+
+            <!--TABLE BODY:BEGIN-->
+            <tbody>
+            <tr>
+                <th scope="row" class="text-right">1</th>
+                <td>Huy</td>
+                <td>Do</td>
+                <td>501</td>
+                <td class="text-center">
+                    <button class="btn btn-sm btn-success">
+                        <i class="bi bi-telephone-fill"></i>
+                    </button>
+                    <button class="btn btn-sm btn-info">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row" class="text-right">2</th>
+                <td>An</td>
+                <td>Ha</td>
+                <td>502</td>
+                <td class="text-center">
+                    <button class="btn btn-sm btn-success">
+                        <i class="bi bi-telephone-fill"></i>
+                    </button>
+                    <button class="btn btn-sm btn-info">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row" class="text-right">3</th>
+                <td>Tung</td>
+                <td>Nguyen</td>
+                <td>503</td>
+                <td class="text-center">
+                    <button class="btn btn-sm btn-success">
+                        <i class="bi bi-telephone-fill"></i>
+                    </button>
+                    <button class="btn btn-sm btn-info">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+            <!--TABLE BODY:END-->
+        </table>
+    </div>
+    <!--====================TABLE:END====================-->
+
+</div>
+<!--====================CONTAINER FOR TABLE:END====================-->
+
+
+<!--####################INCLUDE:BEGIN####################-->
+<script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="angular-1.8.2/angular.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<!--####################INCLUDE:END####################-->
+
+</body>
+<!-- BODY: END -->
+
+</html>

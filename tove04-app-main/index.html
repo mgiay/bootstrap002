@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>TOVE04 APPLICATION</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        
+        <link rel="stylesheet" href="libs/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/app.css">
+    </head>
+    <body ng-controller="MainController">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+          <div class="container">
+              <a class="navbar-brand" href="#">TOVE04</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-nav mr-auto"></div>
+                <form class="form-inline my-2 my-lg-0">
+                  <span class="text-white">{{ userInfo.name }}({{ userInfo.number }})</span>
+                  <span class="text-white mx-2">|</span>  
+                  <a href="#" class="text-white">Unregister</a>
+                </form>
+              </div>
+            </div>
+          </nav>
+        
+        <div class="container">
+          <div class="row my-3">
+            <div class="col-6">
+              <div class="input-group" style="width:250px">
+                <input id="txtFilter" type="text" class="form-control" placeholder="Filter...">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-success" type="button" id="btnCall">
+                    <i class="bi bi-telephone-fill"></i>
+                  </button>
+                </div>
+              </div>
+              
+            </div>
+            <div class="col-6 text-right">
+              <button class="btn btn-success">
+                <i class="bi bi-plus-circle"></i>
+                Add Contact
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Phone</th>
+                  <th width="150"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Huy</td>
+                  <td>Do</td>
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-success">
+                      <i class="bi bi-telephone-fill"></i>
+                    </button>
+                    <button class="btn btn-sm btn-info">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>An</td>
+                  <td>Ha</td>
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-success">
+                      <i class="bi bi-telephone-fill"></i>
+                    </button>
+                    <button class="btn btn-sm btn-info">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Tung</td>
+                  <td>Nguyen</td>
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-success">
+                      <i class="bi bi-telephone-fill"></i>
+                    </button>
+                    <button class="btn btn-sm btn-info">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      <!--Dialpad-->  
+      
+      <div class="card dialpad-wrapper fixed-bottom shadow" ng-if="showDialpad">
+        <div class="card-header bg-green-gradient text-white">
+          Calling: An Ha (110)
+        </div>
+        <div class="card-body text-center pt-3">
+          <div class="mb-3">
+            <input class="from-control text-center">
+            <a href="#">
+              <i class="bi bi-backspace"></i>
+            </a>
+          </div>
+          <div class="d-flex mb-3">
+            <div class="key rounded-circle mx-3 pt-1">1</div>
+            <div class="key rounded-circle mx-3 pt-1">2</div>
+            <div class="key rounded-circle mx-3 pt-1">3</div>
+          </div>
+          <div class="d-flex mb-2">
+            <div class="key rounded-circle mx-3 pt-1">4</div>
+            <div class="key rounded-circle mx-3 pt-1">5</div>
+            <div class="key rounded-circle mx-3 pt-1">6</div>
+          </div>
+          <div class="d-flex mb-2">
+            <div class="key rounded-circle mx-3 pt-1">7</div>
+            <div class="key rounded-circle mx-3 pt-1">8</div>
+            <div class="key rounded-circle mx-3 pt-1">9</div>
+          </div>
+          <div class="d-flex mb-2">
+            <div class="key rounded-circle mx-3 pt-1">*</div>
+            <div class="key rounded-circle mx-3 pt-1">0</div>
+            <div class="key rounded-circle mx-3 pt-1">#</div>
+          </div>
+          <div class="mb-2 text-center">
+            <a href="#" class="key rounded-circle mx-3 pt-1 d-inline-block bg-success border-success">
+              <i class="bi bi-telephone-fill text-white"></i>
+            </a>
+          </div>
+        </div>
+      </div> 
+      <!-- Oncall -->
+      <div class="card dialpad-wrapper fixed-bottom shadow" ng-if="showOncall">
+        <div class="card-header bg-green-gradient text-white">
+          Calling: An Ha (110)
+        </div>
+        <div class="card-body text-center pt-3">
+          <div class="mb-3">
+            <i class="bi bi-person fs-65"></i>
+            <div class="">1001</div>
+          </div>
+          <h3 class="timer text-info">00:00</h3>
+          <div class="">
+            <a href="#" class="btn btn-link">
+              <i class="bi bi-mic fs-25"></i>
+            </a>
+            <a href="#" class="btn btn-link">
+              <i class="bi bi-pause-fill fs-25"></i>
+            </a>
+            <a href="#" class="btn btn-link">
+              <i class="bi bi-keyboard fs-25"></i>
+            </a>
+          </div>
+          <div class="mb-2 text-center mt-2">
+            <a href="#" class="key rounded-circle mx-3 pt-1 d-inline-block bg-danger border-danger">
+              <i class="bi bi-telephone-fill text-white"></i>
+            </a>
+          </div>
+        </div>
+      </div> 
+      <script type="text/javascript" src="libs/angular.min.js"></script>
+      <script type="text/javascript" src="js/app.js"></script>
+    </body>
+</html>

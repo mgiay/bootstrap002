@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<!--====================HEADER:BEGIN====================-->
+<head>
+    <title>TOVE04 APPLICATION</title>
+    <meta charset="utf-8">
+    <meta content="ID=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="bootstrap-4.6.0-dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="bootstrap-icons-1.5.0/bootstrap-icons.css" rel="stylesheet" type="text/css">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+<!--====================HEADER:END====================-->
+
+
+<!--====================BODY: BEGIN====================-->
+<body>
+<script type="text/javascript" src=" //ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script type="text/javascript">
+    var app = angular.module('MyApp', [])
+    app.controller('MyController', function ($scope) {
+        $scope.IsVisible = false;
+        $scope.GenerateTable = function () {
+            $scope.Staff = [
+                {StaffId: 1, FirstName: "Huy",  LastName: "Do",     Phone:"501", Action:"-"},
+                {StaffId: 2, FirstName: "An",   LastName: "Ha",     Phone:"502", Action:"-"},
+                {StaffId: 3, FirstName: "Tung", LastName: "Nguyen", Phone:"503", Action:"-"}
+            ];
+            $scope.IsVisible = true;
+        };
+    });
+</script>
+
+<!--NAVIGATOR BAR:BEGIN-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-envelope"></i>
+            <b>TOVE04 APPLICATION</b>
+        </a>
+
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toogle Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav mr-auto">
+            </div>
+            <form class="form-inline my-2 my-lg-0 ng-pristine ng-valid">
+                <span class="text-white ng-binding">Huy(101)</span>
+                <span class="text-white mx-2">|</span>
+                <a href="#" class="text-white">Unregister</a>
+            </form>
+        </div>
+    </div>
+</nav>
+<!--NAVIGATOR BAR:END-->
+
+
+<!--====================CONTAINER FOR TABLE:BEGIN====================-->
+<div class="container">
+    <!--SEARCH FORM:BEGIN-->
+    <div class="row my-3">
+        <div class="col-6">
+            <div id="div_search" class="input-group" style="width:400px">
+                <input id="txtFilter" type="text" class="form-control" placeholder="Filter...">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-info" type="button" id="btnCall">
+                        <i class="bi bi-telephone-fill"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--SEARCH FORM:END-->
+        <!--ADD CONTACT:BEGIN-->
+        <div class="col-6 text-right">
+            <button class="btn btn-success">
+                <i class="bi bi-plus-circle"></i>
+                Add Contact
+            </button>
+        </div>
+        <!--ADD CONTACT:END-->
+    </div>
+
+    <!--====================TABLE:BEGIN====================-->
+    <div id="div_Table" class="table-responsive" ng-app="MyApp" ng-controller="MyController" ng-init="GenerateTable()">
+        <table class="table table-bordered border-primary" ng-show="IsVisible">
+            <!--TABLE HEADER:BEGIN-->
+            <thead>
+            <tr>
+                <th scope="col" class="text-center" width="50px">#</th>
+                <th scope="col" class="text-center">FirstName</th>
+                <th scope="col" class="text-center">LastName</th>
+                <th scope="col" class="text-center">Phone</th>
+                <th scope="col" class="text-center" width="150px">Action</th>
+            </tr>
+            </thead>
+            <!--TABLE HEADER:END-->
+
+            <!--LOOP:BEGIN-->
+            <tbody ng-repeat="i in Staff">
+            <tr>
+                <td>{{i.StaffId}}</td>
+                <td>{{i.FirstName}}</td>
+                <td>{{i.LastName}}</td>
+                <td>{{i.Phone}}</td>
+                <td>{{i.Action}}</td>
+            </tr>
+            </tbody>
+            <!--LOOP:END-->
+        </table>
+    </div>
+</div>
+    <!--====================TABLE:END====================-->
+<!--====================CONTAINER FOR TABLE:END====================-->
+
+<!--&lt;!&ndash;&lt;!&ndash;####################INCLUDE:BEGIN####################&ndash;&gt;&ndash;&gt;-->
+<!--<script src="js/jquery-3.6.0.js"></script>-->
+<!--<script src="bootstrap-4.6.0-dist/js/bootstrap.js"></script>-->
+<!--<script src="angular-1.8.2/angular.js"></script>-->
+<!--<script src="js/app.js"></script>-->
+<!--&lt;!&ndash;&lt;!&ndash;####################INCLUDE:END####################&ndash;&gt;&ndash;&gt;-->
+</body>
+<!-- BODY: END -->
+
+</html>
